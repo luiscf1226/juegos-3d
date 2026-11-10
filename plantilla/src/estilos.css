@@ -1,0 +1,129 @@
+:root {
+  --fondo: #0d1630;
+  --texto: #fff;
+  --acento: #ffcc33;
+  --tinta: #2a1a00;
+  --velo: rgba(10, 18, 40, 0.62);
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root,
+.app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: Fredoka, system-ui, sans-serif;
+  touch-action: none;
+  user-select: none;
+}
+.app {
+  position: relative;
+}
+.capa {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  text-align: center;
+  background: var(--velo);
+}
+.capa h1 {
+  margin: 0;
+  font-size: clamp(32px, 8vw, 64px);
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+}
+.capa p {
+  margin: 0;
+  font-size: 18px;
+}
+.capa .ayuda {
+  opacity: 0.75;
+  font-size: 14px;
+}
+button {
+  font: inherit;
+  font-weight: 700;
+  font-size: 22px;
+  padding: 12px 36px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--acento);
+  color: var(--tinta);
+  cursor: pointer;
+  box-shadow: 0 5px 0 #b38300;
+}
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #b38300;
+}
+button.sec {
+  background: #fff;
+  box-shadow: 0 5px 0 #999;
+  font-size: 18px;
+}
+.hud {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  font-size: 22px;
+  font-weight: 700;
+  pointer-events: none;
+}
+.hud span {
+  white-space: nowrap;
+  background: var(--velo);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+.hud .poco {
+  color: #ff7a7a;
+}
+.tactil {
+  display: none;
+}
+@media (pointer: coarse) {
+  .tactil {
+    display: block;
+  }
+}
+.palanca {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+.punta {
+  position: absolute;
+  left: 35px;
+  top: 35px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+.saltar {
+  position: absolute;
+  right: 24px;
+  bottom: 36px;
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  font-size: 34px;
+}

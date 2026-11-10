@@ -1,0 +1,3 @@
+# pnpm 10+ no corre scripts de instalación sin permiso: esbuild baja su binario así.
+allowBuilds:
+  esbuild: true
